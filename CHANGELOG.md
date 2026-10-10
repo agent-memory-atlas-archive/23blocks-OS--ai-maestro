@@ -3,6 +3,19 @@
 All notable changes to AI Maestro are documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [0.67.0] - 2026-10-10 - One install for the agentic-sql, agentic-support and agentic-seo skills
+
+### Added
+- The plugin (1.7.0) now includes three skills that live in their own repositories and are pulled in when the plugin is built: `agentic-sql` (run SQL against a production or staging database safely), `agentic-support` (customer support cases with a written trail and runbooks) and `agentic-seo` (SEO audit and implementation). One install gets them; nothing is copied by hand.
+- Trigger evals for all three: 14 of 14 cases pass on every run, including should-not-fire cases for counting files, looking up a function signature and explaining a JOIN.
+
+### Changed
+- `plugin` submodule moves to the commit with plugin 1.7.0.
+- The descriptions of the three skills now say what each does and when to use it; `agentic-sql` no longer lists generic phrases such as "look up" or "how many" as triggers.
+
+### Notes
+- If you installed any of these by hand in `~/.claude/skills`, the next update replaces that copy with the plugin's and keeps a backup in `~/.aimaestro/backups/skills`.
+
 ## [0.66.2] - 2026-10-10 - Design note: agents only write their own area (F035)
 
 Documentation only.
